@@ -5,7 +5,7 @@ const countryInfo = document.getElementById('country-info');
 const borderingCountries = document.getElementById('bordering-countries');
 const errorMessage = document.getElementById('error-message');
 
-// Hide spinner initially
+
 spinner.classList.add('hidden');
 
 async function searchCountry(countryName) {
@@ -20,10 +20,10 @@ async function searchCountry(countryName) {
         countryInfo.innerHTML = "";
         borderingCountries.innerHTML = "";
 
-        // Show loading spinner
+        
         spinner.classList.remove('hidden');
 
-        // Fetch country data
+        
         const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
         
         if (!response.ok) {
@@ -33,7 +33,7 @@ async function searchCountry(countryName) {
         const data = await response.json();
         const country = data[0];
 
-        // Display country info
+    
         countryInfo.innerHTML = `
             <h2>${country.name.common}</h2>
             <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : "N/A"}</p>
@@ -42,7 +42,7 @@ async function searchCountry(countryName) {
             <img src="${country.flags.svg}" alt="${country.name.common} flag" width="150">
         `;
 
-        // Fetch bordering countries if they exist
+        
         if (country.borders) {
             borderingCountries.innerHTML = "<h3>Bordering Countries</h3>";
             for (let borderCode of country.borders) {
@@ -74,12 +74,12 @@ function showError(message) {
     errorMessage.textContent = message;
 }
 
-// Event listener: Button click
+
 searchBtn.addEventListener('click', () => {
     searchCountry(countryInput.value.trim());
 });
 
-// Event listener: Press Enter
+
 countryInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         searchCountry(countryInput.value.trim());
