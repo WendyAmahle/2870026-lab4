@@ -1,3 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    text-align: center;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+/* Search container */
+.search-container {
+    margin: 20px;
+}
+
+#country-input {
+    padding: 8px;
+    width: 200px;
+}
+
+#search-btn {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
 .spinner{
   width: 40px;
   height: 40px;
@@ -5,11 +34,11 @@
   border-top: 4px solid #3498db;
   border-radius: 50%;
   margin: 20px auto;
-  animation: spin 1s linear infinite; /*Requred*/
+  animation: spin 1s Linear infinite; 
 }
 @keyframes spin{
   0% { transform: rotate(odeg); }
-  100% { trasform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .country-card{
@@ -17,7 +46,7 @@
   padding: 20px;
   margin: 20px auto;
   width: 300px;
-  border - radius: 8px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
