@@ -44,6 +44,7 @@ async function searchCountry(countryName) {
 
         // Fetch bordering countries if they exist
         if (country.borders) {
+            borderingCountries.innerHTML = "<h3>Bordering Countries</h3>";
             for (let borderCode of country.borders) {
                 const borderResponse = await fetch(`https://restcountries.com/v3.1/alpha/${borderCode}`);
                 const borderData = await borderResponse.json();
